@@ -1,0 +1,169 @@
+        body {
+            background-color: #222;
+            color: white;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #444;
+            margin-top: 20px;
+        }
+        .btn-success {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .btn-danger {
+            background-color: #d9534f;
+            border-color: #d9534f;
+        }
+        .nav-pills .nav-link {
+            background-color: #e9e9e9;
+            color: #333;
+            margin: 0 5px;
+            border-radius: 20px;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #5cb85c;
+            color: white;
+        }
+        .main-form {
+            border: 1px solid #4b8a30;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #fff;
+            margin: 20px 0;
+        }
+        .form-section {
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        .text-green {
+            color: #5cb85c;
+            font-weight: bold;
+        }
+        .text-red {
+            color: #d9534f;
+            font-weight: bold;
+        }
+        hr {
+            border-color: #444;
+            margin: 30px 0;
+        }
+        #userDataDisplay, #journalSection, #completedTopicsSection {
+            display: none;
+        }
+        .topic-section {
+            margin-top: 30px;
+        }
+        .topic-section h3 {
+            color: #e6e6e6;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .topic-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #444;
+        }
+        .topic-item:last-child {
+            border-bottom: none;
+        }
+        .topic-name {
+            flex-grow: 1;
+        }
+        .hours-count {
+            margin-left: 15px;
+        }
+        .green-box {
+            border: 1px solid #5cb85c;
+            padding: 15px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 400px;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+        }
+        .slider-label {
+            margin: 0 10px;
+        }
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+        /* Add this to your style.css file */
+.main-form {
+    background-color: #212121;
+    color: white;
+    border: 1px solid #4CAF50;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.text-green {
+    color: #4CAF50;
+}
+
+.text-red {
+    color: #f44336;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: white;
+}
+
+th, td {
+    border: 1px solid #4CAF50;
+    padding: 8px;
+    text-align: left;
+}
+
+.topic-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.completed-topic {
+    background-color: #1e2a1e;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.green-box {
+    border: 1px solid #4CAF50;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #1e2a1e;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #4CAF50;
+    color: white;
+}

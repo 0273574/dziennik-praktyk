@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dziennik praktyki zawodowej | Kacper Rusin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dziennik praktyki zawodowej</h1>
+            <ul class="nav nav-pills justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" id="navMetryczka" href="#metryczka">Metryczka</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navJournal" href="#dziennik">Dziennik zajęć</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="navSummary" href="#podsumowanie">Podsumowanie</a>
+                </li>
+            </ul>
+        </header>
+        
+        <main>
+            <div id="inputForm" class="main-form">
+                <h2>Wprowadź dane ucznia i praktyki</h2>
+                <form id="practiceForm">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="imie" class="form-label">Imię:</label>
+                                <input type="text" class="form-control" name="imie" id="imie" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nazwisko" class="form-label">Nazwisko:</label>
+                                <input type="text" class="form-control" name="nazwisko" id="nazwisko" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="klasa" class="form-label">Klasa:</label>
+                                <input type="text" class="form-control" name="klasa" id="klasa" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="rok_szkolny" class="form-label">Rok szkolny:</label>
+                                <input type="text" class="form-control" name="rok_szkolny" id="rok_szkolny" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                        <div class="col-12 text-center">
+                            <div class="form-group">
+                                <label for="odbyta_w" class="form-label">Odbytej w:</label>
+                                <input type="text" class="form-control" name="odbyta_w" id="odbyta_w" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <p class="fw-bold">Czas trwania praktyki</p>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="data_roz" class="form-label text-info">Data rozpoczęcia:</label>
+                                <input type="date" class="form-control" id="data_roz" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="data_zak" class="form-label text-info">Data zakończenia:</label>
+                                <input type="date" class="form-control" id="data_zak" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">zatwierdź</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="userDataDisplay" class="main-form">
+                <h2>Dane ucznia</h2>
+                <div class="text-center mb-4">
+                    <p>Imię i nazwisko: <span id="displayName" class="text-green"></span></p>
+                    <p>Klasa: <span id="displayClass" class="text-green"></span>, rok szkolny: <span id="displayYear" class="text-green"></span></p>
+                    <p>Odbytej w: <span id="displayLocation" class="text-green"></span></p>
+                    <p>W terminie: od <span id="displayStartDate" class="text-green"></span> do <span id="displayEndDate" class="text-green"></span></p>
+                </div>
+                <div class="text-center">
+                    <button id="editButton" class="btn btn-success">Edit</button>
+                </div>
+            </div>
+            
+            <div id="journalSection" class="main-form">
+                <h2>Wprowadź nowe zajęcia</h2>
+                
+                <form id="journalForm">
+                    <div class="form-section">
+                        <p class="fw-bold">Informacja o zajęciach</p>
+                        <div class="row mb-3">
+                            <div class="col-12 text-center">
+                                <label for="class_date" class="form-label text-info">Wybierz datę zajęć:</label>
+                                <input type="date" class="form-control" id="class_date" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-12 text-center">
+                                <label for="class_department" class="form-label text-info">Wybierz dział:</label>
+                                <select class="form-control" id="class_department" required>
+                                    <option value="">-- Wybierz dział --</option>
+                                    <option value="mod1">Moduł wstępny</option>
+                                    <option value="mod2">Montaż, naprawa, konserwacja i obsługa sprzętu komputerowego</option>
+                                    <option value="mod3">Systemy informatyczne</option>
+                                    <option value="mod4">Tworzenie aplikacji internetowych</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-12 text-center">
+                                <label for="class_topic" class="form-label text-info">Wybierz temat:</label>
+                                <select class="form-control" id="class_topic" required>
+                                    <option value="">-- Wybierz temat --</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <p class="fw-bold">Opiekun</p>
+                        <div class="radio-group">
+                            <div>
+                                <input type="radio" id="mentor1" name="mentor" value="Jerzy Kot">
+                                <label for="mentor1">Jerzy Kot</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="mentor2" name="mentor" value="Maria Nowak">
+                                <label for="mentor2">Maria Nowak</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="mentor3" name="mentor" value="Konstanty Kowal">
+                                <label for="mentor3">Konstanty Kowal</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <p class="fw-bold">Realizacja materiału</p>
+                        
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="report" class="form-label">Sprawozdanie:</label>
+                                <textarea class="form-control" id="report" rows="4"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-12 text-end">
+                                <input type="checkbox" id="completed" name="completed">
+                                <label for="completed">Zrealizowano</label>
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="hours" class="form-label">Ile godzin:</label>
+                                <input type="number" class="form-control" id="hours" min="1" max="8" value="1">
+                            </div>
+                            <div class="col-md-8">
+                                <label class="form-label">Stopień opanowania materiału:</label>
+                                <div class="slider-container">
+                                    <span class="slider-label">1</span>
+                                    <input type="range" class="form-range" id="mastery" min="1" max="6" value="3">
+                                    <span class="slider-label">6</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="button" class="btn btn-danger me-2" id="clearButton">wyczyść</button>
+                        <button type="submit" class="btn btn-success" id="addButton">dodaj</button>
+                    </div>
+                </form>
+                
+                <p class="mt-4 text-red">Pozostało do zrealizowania: <span id="remainingHours">140</span> godz.</p>
+                
+                <hr>
+                
+                <h2>Realizacja tematów</h2>
+                
+                <div id="topicsContainer">
+                    <div class="topic-section">
+                        <h3>Moduł wstępny</h3>
+                        <div class="topic-item">
+                            <div class="topic-name">Czynności wstępne i szkolenia, struktura i organizacja pracy informatyków</div>
+                            <div class="hours-count text-red">0 godz.</div>
+                        </div>
+                        <div class="topic-item">
+                            <div class="topic-name">Struktura organizacyjna przedsiębiorstwa i elementy przetwarzania informacji</div>
+                            <div class="hours-count text-red">0 godz.</div>
+                        </div>
+                        <div class="topic-item">
+                            <div class="topic-name">Konfiguracja sprzętu komputerowego i oprogramowania</div>
+                            <div class="hours-count text-red">0 godz.</div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-section">
+                        <h3>Montaż, naprawa, konserwacja i obsługa sprzętu komputerowego</h3>
+                        <div class="topic-item">
+                            <div class="topic-name">Montaż sprzętu komputerowego</div>
+                            <div class="hours-count text-red">0 godz.</div>
+                        </div>
+                        <div class="topic-item">
+                            <div class="topic-name">Naprawa sprzętu komputerowego</div>
+                            <div class="hours-count text-red">0 godz.</div>
+                        </div>
+                        <div class="topic-item">
+                            <div class="topic-name">Konserwacja i obsługa sprzętu komputerowego</div>
+                            <div class="hours-count text-red">0 godz.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="green-box">
+                    <h3>Zrealizowane tematy</h3>
+                    <div id="doneTopics" class="container"></div>
+                </div>
+            </div>
+            
+            <div id="completedTopicsSection" class="main-form">
+                <h2>Podsumowanie realizacji</h2>
+                <div id="completedTopicsContainer">
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© Kacper Rusin XXI w.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="test.js"></script>
+</body>
+</html>
